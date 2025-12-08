@@ -27,11 +27,11 @@ CREATE TABLE IF NOT EXISTS Utilizador (
 CREATE TABLE IF NOT EXISTS Viagem (
 	id INT NOT NULL AUTO_INCREMENT,
     titulo VARCHAR(100) NOT NULL,
-    descrição VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
     tempo INT NOT NULL,
     local VARCHAR(45) NOT NULL,
-    país VARCHAR(45) NOT NULL,
-    preço DECIMAL(10,2) NOT NULL,
+    pais VARCHAR(45) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS Categoria (
 CREATE TABLE IF NOT EXISTS ItemGaleria (
 	id INT NOT NULL AUTO_INCREMENT,
     caminhoFicheiro VARCHAR(255) NOT NULL,
-    descrição VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
     idViagem INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (idViagem)
@@ -59,12 +59,12 @@ CREATE TABLE IF NOT EXISTS ItemGaleria (
 
 -- TABELA Aquisição
 
-CREATE TABLE IF NOT EXISTS Aquisição (
+CREATE TABLE IF NOT EXISTS Aquisicao (
 	id INT NOT NULL AUTO_INCREMENT,
     valor DECIMAL(10,2) NOT NULL,
     NIF INT NOT NULL,
     data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    valorAvaliação INT CHECK (valorAvaliação BETWEEN 1 AND 5),
+    valorAvaliacao INT CHECK (valorAvaliação BETWEEN 1 AND 5),
     idUtilizador INT NOT NULL,
     idViagem INT NOT NULL,
     PRIMARY KEY (id),
@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS Categoria (
 CREATE TABLE IF NOT EXISTS Viagem_Categoria (
 	idViagem INT NOT NULL,
     idCategoria INT NOT NULL,
+    PRIMARY KEY (idViagem, idCategoria),
     FOREIGN KEY (idViagem)
 		REFERENCES Viagem(id)
         ON DELETE CASCADE
@@ -101,12 +102,3 @@ CREATE TABLE IF NOT EXISTS Viagem_Categoria (
 		ON UPDATE CASCADE
 );
     
-    
-    
-    
-    
-    
-    
-
-
-
