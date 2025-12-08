@@ -53,6 +53,8 @@ CREATE TABLE IF NOT EXISTS ItemGaleria (
     PRIMARY KEY (id),
     FOREIGN KEY (idViagem)
 		REFERENCES Viagem(id)
+        ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
 
 -- TABELA Aquisição
@@ -67,9 +69,13 @@ CREATE TABLE IF NOT EXISTS Aquisição (
     idViagem INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (idUtilizador)
-		REFERENCES Utilizador (id),
+		REFERENCES Utilizador (id)
+        ON DELETE CASCADE
+		ON UPDATE CASCADE,
 	FOREIGN KEY (idViagem)
 		REFERENCES Viagem (id)
+        ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
 
 -- TABELA Categoria
@@ -86,9 +92,13 @@ CREATE TABLE IF NOT EXISTS Viagem_Categoria (
 	idViagem INT NOT NULL,
     idCategoria INT NOT NULL,
     FOREIGN KEY (idViagem)
-		REFERENCES Viagem(id),
+		REFERENCES Viagem(id)
+        ON DELETE CASCADE
+		ON UPDATE CASCADE,
 	FOREIGN KEY (idCategoria)
 		REFERENCES Categoria(id)
+        ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
     
     
