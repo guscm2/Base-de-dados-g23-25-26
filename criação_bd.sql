@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS Aquisicao (
     valor DECIMAL(10,2) NOT NULL,
     NIF INT NOT NULL,
     data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    valorAvaliacao INT CHECK (valorAvaliação BETWEEN 1 AND 5),
+    valorAvaliacao INT,
     idUtilizador INT NOT NULL,
     idViagem INT NOT NULL,
     PRIMARY KEY (id),
