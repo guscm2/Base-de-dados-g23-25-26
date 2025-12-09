@@ -78,14 +78,6 @@ CREATE TABLE IF NOT EXISTS Aquisicao (
 		ON UPDATE CASCADE
 );
 
--- TABELA Categoria
-
-CREATE TABLE IF NOT EXISTS Categoria (
-	id INT NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(45),
-    PRIMARY KEY (id)
-);
-
 -- TABELA Viagem_Categoria
 
 CREATE TABLE IF NOT EXISTS Viagem_Categoria (
@@ -101,4 +93,3 @@ CREATE TABLE IF NOT EXISTS Viagem_Categoria (
         ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
-    
