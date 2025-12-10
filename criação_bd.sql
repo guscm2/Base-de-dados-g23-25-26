@@ -2,7 +2,7 @@
 -- CRIAÇÂO DA BASE DE DADOS BSN
 -- -------------------------------------------
 
-CREATE SCHEMA IF NOT EXISTS BSN;
+-- Depois mova cada tabela:
 
 USE BSN;
 
@@ -21,8 +21,7 @@ CREATE TABLE IF NOT EXISTS Utilizador (
     nacionalidade VARCHAR(45) NOT NULL,
     sexo VARCHAR(2) NOT NULL,
     PRIMARY KEY (id),
-    UNIQUE INDEX email_UNIQUE (email ASC),
-    UNIQUE INDEX nif_UNIQUE (nif ASC)
+    UNIQUE INDEX email_UNIQUE (email ASC)
 );
 
 -- TABELA Viagem
