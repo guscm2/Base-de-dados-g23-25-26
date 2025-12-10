@@ -16,7 +16,10 @@ CREATE TABLE IF NOT EXISTS Utilizador (
 	id INT NOT NULL AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    nif INT NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    idade INT NOT NULL,
+    nacionalidade VARCHAR(45) NOT NULL,
+    sexo VARCHAR(2) NOT NULL,
     PRIMARY KEY (id),
     UNIQUE INDEX email_UNIQUE (email ASC),
     UNIQUE INDEX nif_UNIQUE (nif ASC)
@@ -32,6 +35,7 @@ CREATE TABLE IF NOT EXISTS Viagem (
     local VARCHAR(45) NOT NULL,
     pais VARCHAR(45) NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
+    avaliacao DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id)
 );
 
