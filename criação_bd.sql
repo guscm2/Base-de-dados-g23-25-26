@@ -1,8 +1,7 @@
 -- -------------------------------------------
 -- CRIAÇÂO DA BASE DE DADOS BSN
 -- -------------------------------------------
-
--- Depois mova cada tabela:
+CREATE SCHEMA BSN;
 
 USE BSN;
 
@@ -68,6 +67,7 @@ CREATE TABLE IF NOT EXISTS Aquisicao (
     NIF INT NOT NULL,
     data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     valorAvaliacao INT,
+    comentario VARCHAR(255),
     idUtilizador INT NOT NULL,
     idViagem INT NOT NULL,
     PRIMARY KEY (id),

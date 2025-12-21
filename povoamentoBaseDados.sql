@@ -1,8 +1,8 @@
 USE BSN;
 
-/*
 
-INSERT INTO Utilizador (email, password, nome_Utilizador, idade, nacionalidade, sexo)
+
+INSERT INTO Utilizador (email, password, nome, idade, nacionalidade, sexo)
 VALUES 
 ('Albertofernandes21', 'albfern1998', 'Alberto Fernandes', 27, 'Angolano', 'M'),
 ('maria.silva@email.com', 'mariasilva22', 'Maria Silva', 24, 'Portuguesa', 'F'),
@@ -15,7 +15,7 @@ VALUES
 ('ricardo.lima@email.com', 'ricardolima88', 'Ricardo Lima', 34, 'Angolano', 'M'),
 ('tiago.ribeiro@email.com', 'tiagoribeiro45', 'Tiago Ribeiro', 28, 'Português', 'M');
 
-INSERT INTO Viagem (titulo, descricao_Viagem, tempo, local, pais, preco, avaliacao)
+INSERT INTO Viagem (titulo, descricao, tempo, local, pais, preco, avaliacao)
 VALUES
 ('Viagem a Madrid',
  'Descobre Madrid com visitas ao Palácio Real, Museu do Prado e Parque do Retiro. Aproveita a gastronomia local e bairros históricos.',
@@ -58,7 +58,7 @@ VALUES
  4, 'Berlim', 'Alemanha', 670.00, 4.6);
 
 
-INSERT INTO Categoria (nome_Categoria)
+INSERT INTO Categoria (nome)
 VALUES
 ('Época Alta'),
 ('Época Baixa'),
@@ -72,7 +72,7 @@ VALUES
 ('Romântica');
 
 
-INSERT INTO Viagem_Categoria (id_Viagem, id_Categoria)
+INSERT INTO Viagem_Categoria (idViagem, idCategoria)
 VALUES
 -- Viagem a Madrid (id_viagem = 1)
 (1, 1), -- Época Alta
@@ -117,7 +117,7 @@ VALUES
 
 
 
-INSERT INTO ItemGaleria (caminhoFicheiro, descricao_ItemGaleria, id_Viagem)
+INSERT INTO ItemGaleria (caminhoFicheiro, descricao, idViagem)
 VALUES
 ('images/madrid_palacio.jpg', 'Fachada principal do Palácio Real de Madrid', 1),
 ('images/paris_torre.jpg', 'Torre Eiffel vista dos jardins do Trocadéro', 2),
@@ -129,9 +129,9 @@ VALUES
 ('images/amesterdao_canal.jpg', 'Passeio de barco pelos canais de Amesterdão', 8),
 ('images/dubrovnik_muralhas.jpg', 'Vista panorâmica das muralhas de Dubrovnik', 9),
 ('images/berlim_portao.jpg', 'Portão de Brandemburgo iluminado à noite', 10);
-*/
 
-INSERT INTO Aquisicao (valor, NIF, data, valorAvaliacao, comentario, id_Utilizador, id_Viagem)
+
+INSERT INTO Aquisicao (valor, NIF, data, valorAvaliacao, comentario, idUtilizador, idViagem)
 VALUES
 -- Alberto (ID 1) foi a Madrid e deu 5
 (450, 210123456, '2024-02-15 10:30:00', 5, 'Experiência fantástica!', 1, 1),
