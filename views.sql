@@ -1,3 +1,4 @@
+USE BSN;
 -- VIEW 1
 
 CREATE VIEW viagens_populares AS 
@@ -10,7 +11,7 @@ LEFT JOIN Aquisicao a ON v.id_Viagem = a.id_Viagem
 GROUP BY v.id_Viagem, v.titulo 
 ORDER BY total_aquisicoes DESC;
 
---VIEW 2
+-- VIEW 2
 
 CREATE VIEW galeria_utilizador AS
 SELECT
@@ -40,15 +41,15 @@ ORDER BY a.data DESC;
 
 -- VIEW 4
 
-CREATE VIEW 10utilizadores_mais_gastador AS
+CREATE VIEW utilizadores_mais_gastador AS
 SELECT 
     u.id_Utilizador,
     u.nome_Utilizador,
-    u.nacionalidade_Utilizador,
+    u.nacionalidade,
     SUM(a.valor) AS total_gasto
 FROM Utilizador u
 JOIN Aquisicao a ON u.id_Utilizador = a.id_Utilizador
-GROUP BY u.id_Utilizador, u.nome_Utilizador, u.nacionalidade_Utilizador
+GROUP BY u.id_Utilizador, u.nome_Utilizador, u.nacionalidade
 ORDER BY total_gasto DESC
 LIMIT 10;
 
@@ -64,6 +65,9 @@ JOIN Viagem_Categoria vc ON c.id_Categoria = vc.id_Categoria
 JOIN Viagem v ON vc.id_Viagem = v.id_Viagem
 JOIN Aquisicao a ON v.id_Viagem = a.id_Viagem
 JOIN Utilizador u ON a.id_Utilizador = u.id_Utilizador
-WHERE u.idade_Utilizador BETWEEN 18 AND 25
+WHERE u.idade BETWEEN 18 AND 25
 GROUP BY c.id_Categoria, c.nome_Categoria
 ORDER BY total_aquisicoes_jovens DESC;
+
+
+SHOW FULL TABLES WHERE Table_type = 'VIEW';
