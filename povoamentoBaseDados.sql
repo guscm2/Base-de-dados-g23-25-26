@@ -1,7 +1,6 @@
 USE BSN;
+
 /*
-
-
 INSERT INTO Utilizador (email, password, nome, idade, nacionalidade, sexo)
 VALUES 
 ('Albertofernandes21', 'albfern1998', 'Alberto Fernandes', 27, 'Angolano', 'M'),
@@ -58,7 +57,7 @@ VALUES
  4, 'Berlim', 'Alemanha', 670.00, 4.6);
 
 
-INSERT INTO Categoria (nome)
+INSERT INTO Categoria (nome_Categoria)
 VALUES
 ('Época Alta'),
 ('Época Baixa'),
@@ -131,37 +130,18 @@ VALUES
 ('images/berlim_portao.jpg', 'Portão de Brandemburgo iluminado à noite', 10);
 
 
-INSERT INTO Aquisicao (valor, NIF, data, valorAvaliacao, comentario, idUtilizador, idViagem)
+INSERT INTO Aquisicao (valor, NIF, data, valorAvaliacao, comentario, id_Utilizador, id_Viagem)
 VALUES
--- Alberto (ID 1) foi a Madrid e deu 5
-(450, 210123456, '2024-02-15 10:30:00', 5, 'Experiência fantástica!', 1, 1),
-
--- Maria (ID 2) foi a Paris e deu 4
-(780, 220987654, '2024-03-10 14:00:00', 4, 'Paris é linda, mas cansativa.', 2, 2),
-
--- João (ID 3) foi a Roma e deu 5 (Repara: Outro 5! Agora é permitido)
-(690, 230456789, '2024-04-05 09:15:00', 5, 'O Coliseu é incrível.', 3, 3),
-
--- Ana (ID 4) foi a Lisboa e deu 4
-(320, 240112233, '2024-05-20 18:45:00', 4, 'Ótima comida.', 4, 4),
-
--- Carlos (ID 5) foi a Londres e deu 5
-(820, 250334455, '2024-06-12 11:20:00', 5, 'Organização impecável.', 5, 5),
-
--- Sofia (ID 6) foi ao Algarve e deu 5
-(950, 260667788, '2024-07-01 16:30:00', 5, 'Melhores férias de sempre.', 6, 6),
-
--- Pedro (ID 7) foi a Barcelona e deu 3
-(560, 270998877, '2024-08-14 08:50:00', 3, 'Cidade muito cheia.', 7, 7),
-
--- Inês (ID 8) foi a Amesterdão e deu 4
-(610, 280556644, '2024-09-09 13:10:00', 4, 'Canais muito bonitos.', 8, 8),
-
--- Ricardo (ID 9) foi a Dubrovnik e deu 5
-(740, 290223311, '2024-10-02 12:00:00', 5, 'Paisagem de filme.', 9, 9),
-
--- Tiago (ID 10) foi a Berlim e deu 4
-(670, 200778899, '2024-11-15 15:40:00', 4, 'Muita história.', 10, 10);
+(25, 210123456, '2024-02-15 10:30:00', 5, 'Experiência fantástica!', 1, 1),
+(18, 220987654, '2024-03-10 14:00:00', 4, 'Paris é linda, mas cansativa.', 2, 2),
+(29, 230456789, '2024-04-05 09:15:00', 5, 'O Coliseu é incrível.', 3, 3),
+(12, 240112233, '2024-05-20 18:45:00', 4, 'Ótima comida.', 4, 4),
+(30, 250334455, '2024-06-12 11:20:00', 5, 'Organização impecável.', 5, 5),
+(15, 260667788, '2024-07-01 16:30:00', 5, 'Melhores férias de sempre.', 6, 6),
+(22, 270998877, '2024-08-14 08:50:00', 3, 'Cidade muito cheia.', 7, 7),
+(19, 280556644, '2024-09-09 13:10:00', 4, 'Canais muito bonitos.', 8, 8),
+(27, 290223311, '2024-10-02 12:00:00', 5, 'Paisagem de filme.', 9, 9),
+(14, 200778899, '2024-11-15 15:40:00', 4, 'Muita história.', 10, 10);
 */
 SELECT * FROM ItemGaleria;
 SELECT * FROM Aquisicao;

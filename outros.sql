@@ -1,7 +1,7 @@
 DELIMITER $$
 
 CREATE PROCEDURE AdicionarAvaliacao (
-    IN p_idAquisicao INT,
+    IN p_id_Aquisicao INT,
     IN p_nota INT,
     IN p_comentario TEXT
 )
@@ -17,7 +17,7 @@ BEGIN
         UPDATE Aquisicao
         SET valorAvaliacao = p_nota,
             comentario = p_comentario
-        WHERE id = p_idAquisicao;
+        WHERE id = p_id_Aquisicao;
         
         -- 3. Confirmação de Sucesso
         -- Verifica se alguma linha foi alterada (se o ID existe)
@@ -44,10 +44,10 @@ BEGIN
         SET avaliacao_media = (
             SELECT IFNULL(AVG(valorAvaliacao), 0)
             FROM Aquisicao
-            WHERE idViagem = NEW.idViagem 
+            WHERE id_Viagem = NEW.id_Viagem 
             AND valorAvaliacao IS NOT NULL
         )
-        WHERE id = NEW.idViagem;
+        WHERE id_Viagem = NEW.id_Viagem;
 
     END IF;
 END $$
