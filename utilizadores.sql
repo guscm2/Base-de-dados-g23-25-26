@@ -1,28 +1,45 @@
-USE BSN
+USE BSN;
 
-CREATE ROLE Proprietario, Administrador, Analista;
+-- Criar roles
+CREATE ROLE Proprietario;
+CREATE ROLE Administrador;
+CREATE ROLE Analista;
 
+-- Permissões por role
 GRANT ALL PRIVILEGES ON BSN.* TO Proprietario;
-GRANT SELECT, INSERT, UPDATE, DELETE ON BSN.* TO Administrador
+GRANT SELECT, INSERT, UPDATE, DELETE ON BSN.* TO Administrador;
 GRANT SELECT ON BSN.* TO Analista;
 
+-- Criar utilizadores (passwords fortes)
 CREATE USER 'bernardo'@'localhost'
-    IDENTIFIED BY 'bernardo1963';
+IDENTIFIED BY 'Bernardo#1963';
 
 CREATE USER 'sabrina'@'localhost'
-    IDENTIFIED BY 'sabrina70';
+IDENTIFIED BY 'Sabrina@1970';
 
 CREATE USER 'nelson'@'localhost'
-    IDENTIFIED BY 'nelsonseba65';
-
-GRANT Proprietario TO bernardo, sabrina, nelson;
+IDENTIFIED BY 'Nelson$1965';
 
 CREATE USER 'antonio'@'localhost'
-    IDENTIFIED BY 'antoniomoreira99';
-
-GRANT Administrador TO antonio;
+IDENTIFIED BY 'Antonio#1999';
 
 CREATE USER 'ana'@'localhost'
-    IDENTIFIED BY 'anagomes1989';
+IDENTIFIED BY 'Ana@1989';
 
-GRANT Analista TO ana;
+-- Atribuir roles
+GRANT Proprietario TO 'bernardo'@'localhost';
+GRANT Proprietario TO 'sabrina'@'localhost';
+GRANT Proprietario TO 'nelson'@'localhost';
+
+GRANT Administrador TO 'antonio'@'localhost';
+GRANT Analista TO 'ana'@'localhost';
+
+-- Ativar roles por defeito
+SET DEFAULT ROLE ALL TO
+'bernardo'@'localhost',
+'sabrina'@'localhost',
+'nelson'@'localhost',
+'antonio'@'localhost',
+'ana'@'localhost';
+
+

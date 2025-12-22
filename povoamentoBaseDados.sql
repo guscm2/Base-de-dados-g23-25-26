@@ -1,5 +1,5 @@
 USE BSN;
-
+/*
 
 
 INSERT INTO Utilizador (email, password, nome, idade, nacionalidade, sexo)
@@ -162,7 +162,7 @@ VALUES
 
 -- Tiago (ID 10) foi a Berlim e deu 4
 (670, 200778899, '2024-11-15 15:40:00', 4, 'Muita história.', 10, 10);
-
+*/
 SELECT * FROM ItemGaleria;
 SELECT * FROM Aquisicao;
 SELECT * FROM Categoria;
